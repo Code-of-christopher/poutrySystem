@@ -1,0 +1,16 @@
+{
+  "extends": ["eslint:recommended", "plugin:import/errors", "plugin:import/warnings"],
+  "plugins": ["import"],
+  "rules": {
+  "import/no-unresolved": "error",
+  "import/no-extraneous-dependencies": "warn"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}
+  
