@@ -4,6 +4,7 @@ import { AppDataSource } from "./data-source.js";
 import userRouter from "./routes/auth.route.js";
 import batchRouter from "./routes/batch.route.js";
 import eggRouter from "./routes/egg.route.js";
+import feedsRouter from "./routes/feeds.route.js";
 import cookieParser from "cookie-parser";
 
 dotenv.config();
@@ -15,6 +16,7 @@ app.use(cookieParser());
 app.use("/api/user", userRouter);
 app.use("/api/batch", batchRouter);
 app.use("/api/eggs", eggRouter);
+app.use("/api/feeds", feedsRouter);
 
 AppDataSource.initialize().then(() => {
   console.log("Database connected!");
