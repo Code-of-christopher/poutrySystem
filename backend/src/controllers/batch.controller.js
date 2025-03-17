@@ -1,14 +1,10 @@
 import { AppDataSource } from "../data-source.js";
 import { Batch } from "../entities/Batch.js";
 import { Egg } from "../entities/Eggs.js";
-import { Health } from "../entities/Health.js";
-import { Vaccine } from "../entities/Vaccines.js";
 import { errorHandler } from "../utils/error.js";
 
 const batchRepository = AppDataSource.getRepository(Batch);
 const eggRepository = AppDataSource.getRepository(Egg);
-const healthRepository = AppDataSource.getRepository(Health);
-const vaccineRepository = AppDataSource.getRepository(Vaccine);
 
 export const createBatch = async (req, res, next) => {
   try {
@@ -62,24 +58,6 @@ export const getBatchEggs = async (req, res, next) => {
   try {
     const eggs = await eggRepository.find({ where: { batchId: req.params.id } });
     res.status(200).json(eggs);
-  } catch (error) {
-    next(error);
-  }
-};
-
-export const getBatchHealth = async (req, res, next) => {
-  try {
-    const health = await healthRepository.find({ where: { batchId: req.params.id } });
-    res.status(200).json(health);
-  } catch (error) {
-    next(error);
-  }
-};
-
-export const getBatchVaccine = async (req, res, next) => {
-  try {
-    const vaccine = await vaccineRepository.find({ where: { batchId: req.params.id } });
-    res.status(200).json(vaccine);
   } catch (error) {
     next(error);
   }

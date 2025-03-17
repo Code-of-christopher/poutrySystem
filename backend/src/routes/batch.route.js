@@ -1,5 +1,5 @@
 import express from 'express';
-import { createBatch, updateBatch, deleteBatch, getBatch, getBatchEggs, getBatchHealth, getBatchVaccine } from '../controllers/batch.controller.js';
+import { createBatch, updateBatch, deleteBatch, getBatch, getBatchEggs } from '../controllers/batch.controller.js';
 import { verifyToken } from '../utils/verifyUser.js';
 import { Batch } from "../entities/Batch.js";
 import { errorHandler } from '../utils/error.js';
@@ -27,7 +27,5 @@ router.delete("/delete/:id", verifyToken, deleteBatch);
 router.get("/:id", verifyToken, getBatch); 
 
 router.get("/eggs/:id", fetchBatch, getBatchEggs); 
-router.get("/health/:id", fetchBatch, getBatchHealth); 
-router.get("/vaccine/:id", fetchBatch, getBatchVaccine); 
 
 export default router;
