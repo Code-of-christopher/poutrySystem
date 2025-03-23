@@ -1,5 +1,5 @@
 import express from 'express';
-import { createBatch, updateBatch, deleteBatch, getBatch, getBatchEggs } from '../controllers/batch.controller.js';
+import { createBatch, updateBatch, deleteBatch, getBatch, getBatchEggs, getAllBatches } from '../controllers/batch.controller.js';
 import { verifyToken } from '../utils/verifyUser.js';
 import { Batch } from "../entities/Batch.js";
 import { errorHandler } from '../utils/error.js';
@@ -24,6 +24,7 @@ const fetchBatch = async (req, res, next) => {
 router.post("/create", verifyToken, createBatch);
 router.patch("/update/:id", verifyToken, updateBatch);
 router.delete("/delete/:id", verifyToken, deleteBatch);
+router.get("/all", verifyToken, getAllBatches);
 router.get("/:id", verifyToken, getBatch); 
 
 router.get("/eggs/:id", fetchBatch, getBatchEggs); 

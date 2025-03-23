@@ -8,14 +8,6 @@ export const Egg = new EntitySchema({
       type: "int",
       generated: true,
     },
-    batchId: {
-      type: "int",
-      nullable: false,
-    },
-    batchName: {
-      type: "varchar",
-      nullable: false,
-    },
     total: {
       type: "int",
       nullable: false,
@@ -44,6 +36,7 @@ export const Egg = new EntitySchema({
       type: "many-to-one",
       joinColumn: { name: "batchId" },
       nullable: false,
+      eager: true,  
     },
   },
 });

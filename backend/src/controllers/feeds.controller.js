@@ -33,3 +33,13 @@ export const createFeeds = async (req, res, next) => {
     next(error);
   }
 };
+
+export const getAllFeeds = async (req, res, next) => {
+  try {
+    const feeds = await feedRepository.find();
+    res.status(200).json(feeds);
+    console.log(feeds);
+  } catch (error) {
+    next(error);
+  }
+};

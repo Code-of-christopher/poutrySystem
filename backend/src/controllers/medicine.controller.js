@@ -14,6 +14,16 @@ export const createMedicine = async (req, res, next) => {
   }
 };
 
+export const getAllMedicine = async (req, res, next) => {
+  try {
+    const medicines = await medicineRepository.find();
+    res.status(200).json(medicines);
+    console.log(medicines);
+  } catch (error) {
+    next(error);
+  }
+};
+
 export const deleteMedicine = async (req, res, next) => {
   try {
     const medicine = await medicineRepository.findOneBy({ id: req.params.id });

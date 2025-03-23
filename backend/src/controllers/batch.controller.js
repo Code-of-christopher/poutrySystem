@@ -11,6 +11,8 @@ export const createBatch = async (req, res, next) => {
     const batch = batchRepository.create(req.body);
     await batchRepository.save(batch);
     res.status(201).json(batch);
+    console.log("created batch successfully", batch);
+    
   } catch (error) {
     next(error);
   }
@@ -53,6 +55,17 @@ export const getBatch = async (req, res, next) => {
     next(error);
   }
 };
+
+export const getAllBatches = async (req, res, next) => {
+  try {
+    const batches = await batchRepository.find();
+    res.status(200).json(batches);
+    console.log(batches);
+  } catch (error) {
+    next(error);
+  }
+};
+
 
 export const getBatchEggs = async (req, res, next) => {
   try {

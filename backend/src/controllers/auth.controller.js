@@ -47,6 +47,18 @@ export const signIn = async (req, res, next) => {
   }
 };
 
+export const getCurrentUser = async (req, res, next) => {
+  try {
+    // req.user was set by verifyToken middleware
+    // eslint-disable-next-line no-unused-vars
+    const { password, ...userData } = req.user;
+    res.status(200).json(userData);
+  } catch (error) {
+    next(error);
+  }
+};
+
+
 export const signOut = (req, res, next) => {
   try {
     res.clearCookie("access_token");

@@ -1,0 +1,174 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global body settings */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+/* Root app container */
+#app {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Headings */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Card container for auth and dashboard views */
+.card {
+  background: #fff;
+  margin: 0 auto 20px auto;
+  max-width: 1200px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Authentication controls */
+.auth-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* Navigation styling */
+.nav {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.nav-btn {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.nav-btn:hover {
+  background: #555;
+}
+
+/* Button styling */
+.btn {
+  background: #0066cc;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background: #005bb5;
+}
+
+/* Form styling */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+/* Data container for fetched data */
+.data-container {
+  background: #e9e9e9;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  margin-top: 10px;
+}
+
+/* Message styling for errors and feedback */
+.message {
+  margin-top: 10px;
+  color: #333;
+}
+
+/* Hidden utility class */
+.hidden {
+  display: none;
+}
+
+/* When a form container is not empty, force display block */
+#batch-form-container:not(:empty),
+#egg-form-container:not(:empty),
+#feeds-form-container:not(:empty),
+#medicine-form-container:not(:empty) {
+  display: block !important;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+}
+
+thead {
+  background: #f0f0f0;
+}
+
+/* Update and Delete buttons for Batch and Medicine tables */
+.update-batch, .delete-batch {
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  margin: 0 2px;
+  color: #fff;
+}
+
+.update-batch {
+  background: #5bc0de;
+}
+
+.update-batch:hover {
+  background: #31b0d5;
+}
+
+.delete-batch,
+.delete-medicine {
+  background: #d9534f;
+}
+
+.delete-batch:hover,
+.delete-medicine:hover {
+  background: #c9302c;
+}

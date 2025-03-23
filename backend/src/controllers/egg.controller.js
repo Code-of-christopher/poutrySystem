@@ -19,11 +19,10 @@ export const recordEggProduction = async (req, res, next) => {
     }
 
     const egg = eggRepository.create({
-      batchId: batch.id,
-      batchName: batch.name,
       total: req.body.total,
       weight: req.body.weight,
       userRef: req.user.id,
+      batch: batch
     });
 
     await eggRepository.save(egg);
